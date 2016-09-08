@@ -1,3 +1,4 @@
+var path = require('path');
 var express = require('express');
 var cfg = require('./config/app.json');
 var app = express();
@@ -11,9 +12,11 @@ app.use(bodyParser.json());
 app.use(require('cookie-parser')());
 
 // 读取routes下文件并以对应文件名设置路由
-var routes_dir = __dirname+'/'+cfg.route;
-require("fs").readdirSync(routes_dir).forEach(function(route){
-    app.use('/'+cfg.pro_dir+route.slice(0,-3),require(routes_dir+'/'+route));
+// var routes_dir = __dirname+'/'+cfg.route;
+var routes_dir = path.resolve(cfg.route)
+require("fs").readdirSync(cfg.route).forEach(function(route){
+    var dir = path.join('/',cfg.pro_dir, path.basename(route,'.js'));
+    app.use(dir,require(path.join(routes_dir, route)));
 });
 
 // 404

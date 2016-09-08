@@ -6,11 +6,11 @@ var sql_query_by = 'select * from user where ?? = ?';
 
 // 增
 function insert(fn,obj){
-    pool(sql_insert, obj,fn);
+    pool(sql_insert, fn, obj);
 }
 // 查
 function query(fn){
-    pool(sql_query,fn);
+    pool(sql_query, fn);
 }
 module.exports = {
     insert: insert,
