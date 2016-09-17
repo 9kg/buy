@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>上海厚步网络科技有限公司</title>
+    <link rel="shortcut icon" type="image/ico" href="/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="./css/main.css" media="all" />
+    <style type="text/css">
+        .oper_ct {
+            margin: 5px 0 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <aside class="sidebar">
+        <div class="top_bar">
+            <p class="logo"><i class="iconfont icon-95b"></i></p><i class="iconfont icon-7cd toggle_another_form"></i></div>
+        <ul class="menu">
+            <li class="active">
+                <a href="./goods.html">
+                    <i class="iconfont icon-72b"></i>
+                    <span class="title">商品</span><span class="arrow"></span>
+                </a>
+            </li>
+            <li>
+                <a href="./goods_type.html">
+                    <i class="iconfont icon-66e"></i>
+                    <span class="title">商品类型</span><span class="arrow"></span>
+                </a>
+            </li>
+            <li>
+                <a href="http://es2.laizhuan.com/back/page/adver">
+                    <i class="iconfont icon-675"></i>
+                    <span class="title">夺宝中商品</span><span class="arrow"></span>
+                </a>
+            </li>
+            <li>
+                <a href="http://es2.laizhuan.com/back/page/task">
+                    <i class="iconfont icon-6cd"></i>
+                    <span class="title">用户</span><span class="arrow"></span>
+                </a>
+            </li>
+            <li>
+                <a href="http://es2.laizhuan.com/back/page/source">
+                    <i class="iconfont icon-6a7"></i>
+                    <span class="title">管理员</span><span class="arrow"></span>
+                </a>
+            </li>
+            <li>
+                <a href="http://es2.laizhuan.com/back/page/docking">
+                    <i class="iconfont icon-83c"></i>
+                    <span class="title">收货地址</span><span class="arrow"></span>
+                </a>
+            </li>
+            <li>
+                <a href="http://es2.laizhuan.com/back/page/finance_report">
+                    <i class="iconfont icon-853"></i>
+                    <span class="title">晒单</span><span class="arrow"></span>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:;">
+                    <i class="iconfont icon-6b5"></i>
+                    <span class="title">个人中心</span><span class="arrow"></span>
+                </a>
+                <ul class="sub_menu">
+                    <li><a href="http://es2.laizhuan.com/back/personal" class="title">我的信息</a></li>
+                    <li><a href="http://es2.laizhuan.com/back/logout" class="title">退出登录</a></li>
+                </ul>
+            </li>
+        </ul>
+    </aside>
+    <div class="content">
+        <div class="oper_ct t_right">
+            <button class="btn btn_primary btn_add">添加商品</button>
+        </div>
+    </div>
+    <div class="box_ct hidden">
+        <form class="goods_add" enctype="multipart/form-data">
+            <div class="grid">
+                <div class="ct grid">
+                    <div class="ct_4 field">名称</div>
+                    <div class="ct_4-3">
+                        <input type="text" name="name" data-validate="require">
+                    </div>
+                </div>
+                <div class="ct grid">
+                    <div class="ct_4 field">分类</div>
+                    <div class="ct_4-3 goods_type_id_ct">
+                        <input type="hidden" name="goods_type_id">
+                        <input type="text" data-validate="require" class="goods_type_name">
+                    </div>
+                </div>
+                <div class="ct grid">
+                    <div class="ct_4 field">描述</div>
+                    <div class="ct_4-3">
+                        <input type="text" name="desc">
+                    </div>
+                </div>
+                <div class="ct grid">
+                    <div class="ct_4 field">价格</div>
+                    <div class="ct_4-3">
+                        <label class="suffix">
+                            <input type="text" name="price">
+                            <span class="opt_imitate">元</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="ct grid">
+                    <div class="ct_4 field">每人次单价</div>
+                    <div class="ct_4-3">
+                        <label class="suffix">
+                            <input type="text" name="price_per">
+                            <span class="opt_imitate">元</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="ct grid">
+                    <div class="ct_4 field">库存量</div>
+                    <div class="ct_4-3">
+                        <label class="suffix">
+                            <input type="text" name="stock">
+                            <span class="opt_imitate">个</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="ct grid">
+                    <div class="ct_4 field">缩略图</div>
+                    <div class="ct_4-3">
+                        <input type="file" name="thumbnail">
+                    </div>
+                </div>
+                <div class="ct grid">
+                    <div class="ct_4 field">图文地址</div>
+                    <div class="ct_4-3">
+                        <input type="text" name="img_txt_url">
+                    </div>
+                </div>
+                <div class="ct grid">
+                    <div class="ct_4 field">banner图地址</div>
+                    <div class="ct_4-3">
+                        <input type="text" name="banner_url">
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script src="./js/base.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        var opt = {
+            $ct: $(".content"),
+            col: [{
+                key: "id",
+                title: "ID",
+                sort: true,
+                filter: true
+            }, {
+                key: "name",
+                title: "名称",
+                sort: true,
+                filter: true
+            }, {
+                key: "goods_type_name",
+                title: "类别",
+                sort: true,
+                filter: true
+            }, {
+                key: "desc",
+                title: "描述",
+                sort: true,
+                filter: true
+            }, {
+                key: "price",
+                title: "价格",
+                sort: true,
+                filter: true
+            }, {
+                key: "create_time",
+                title: "创建时间",
+                sort: true,
+                filter: true
+            }, {
+                key: "update_time",
+                title: "修改时间",
+                sort: true,
+                filter: true
+            }, {
+                key: "stock",
+                title: "库存",
+                sort: true,
+                filter: true
+            }, {
+                key: "price_per",
+                title: "每人次价格",
+                sort: true,
+                filter: true
+            }, {
+                key: "id",
+                title: "操作",
+                width: 65,
+                render: function(a, b) {
+                    var btns = $('<button class="btn btn_warning" data-id="' + b + '">修改</button>');
+                    a.append(btns);
+                }
+            }],
+            // isLocal: true,
+            url: "http://192.168.2.211:9211/buy/goods/query"
+        };
+        new Table(opt);
+
+        var form_html = $('.box_ct').html();
+        $('.box_ct').remove();
+        var goods_box = new Box({
+            title: "添加任务",
+            html: form_html,
+            css: {
+                "max-width": "500px",
+                "min-width": "300px",
+            },
+            fnSure: function(that) {
+                var form_data = new FormData($('form.goods_add')[0]);
+                $.ajax({
+                    url: 'http://127.0.0.1:9211/buy/goods/insert',
+                    type: 'POST',
+                    dataType: 'json',
+                    cache: false,
+                    processData: false,
+                    contentType: false,
+                    data: form_data
+                }).done(function(data) {
+                    console.dir(data);
+                    if(data.status !== 1){
+                        that.show();
+                    }else{
+
+                    }
+                }).fail(function(e) {
+                    console.dir(e);
+                    that.show();
+                });
+            },
+            fnCancel: function(t) {
+                console.dir(t)
+            }
+        });
+
+        $('body').on('click', '.btn_add', function() {
+            goods_box.show();
+            // 置为suggest控件
+            $('.goods_type_id_ct').suggest({
+                key: 'id',
+                val: 'name',
+                $key_ct: $('[name="goods_type_id"]'),
+                $val_ct: $('.goods_type_name'),
+                url: 'http://127.0.0.1:9211/buy/goods_type/query'
+            });
+        });
+    });
+    </script>
+</body>
+
+</html>
